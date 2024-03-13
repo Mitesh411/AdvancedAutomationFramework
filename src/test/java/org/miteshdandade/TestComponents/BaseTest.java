@@ -37,7 +37,7 @@ public class BaseTest {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
                 + "//src//main//java////org//miteshdandade//resources//GlobalData.properties");
-                 // "\src\main\java\org\miteshdandade\resources\GlobalData.properties"
+
 
         prop.load(fis);
 
