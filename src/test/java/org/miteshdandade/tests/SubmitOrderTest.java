@@ -55,7 +55,7 @@ public class SubmitOrderTest extends BaseTest {
     {
 
 
-        List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//rahulshettyacademy//data//PurchaseOrder.json");
+        List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"//src//test//java//org//miteshdandade//data//PurchaseOrder.json");
         return new Object[][]  {{data.get(0)}, {data.get(1) } };
 
     }
