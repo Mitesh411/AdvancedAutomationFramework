@@ -1,4 +1,4 @@
-FROM openjdk:26-jdk-slim
+FROM openjdk:21-jdk-slim
 
 
 RUN apt-get update && apt-get install -y \
@@ -24,4 +24,3 @@ WORKDIR /app
 RUN mvn clean package
 
 CMD ["mvn", "test"]
-
