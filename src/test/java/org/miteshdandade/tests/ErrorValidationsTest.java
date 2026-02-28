@@ -36,4 +36,10 @@ public class ErrorValidationsTest extends BaseTest {
 
 
     }
+
+    @Test(groups= {"ErrorHandling"})
+    public void EmptyCredentialsValidation() throws IOException, InterruptedException {
+        landingPage.loginApplication("", "");
+        Assert.assertEquals("*Email is required", landingPage.getErrorMessage());
+    }
 }
