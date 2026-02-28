@@ -36,4 +36,13 @@ public class ErrorValidationsTest extends BaseTest {
 
 
     }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void ProductNotFoundValidation() throws IOException, InterruptedException
+    {
+
+        String productName = "FAKE PRODUCT NOT EXIST";
+        ProductCatalogue productCatalogue = landingPage.loginApplication("rahulshetty@gmail.com", "Iamking@000");
+        productCatalogue.addProductToCart(productName);
+    }
 }
