@@ -63,25 +63,4 @@ public class SubmitOrderTest extends BaseTest {
 
 
 
-//	 @DataProvider
-//	  public Object[][] getData()
-//	  {
-//	    return new Object[][]  {{"anshika@gmail.com","Iamking@000","ZARA COAT 3"}, {"shetty@gmail.com","Iamking@000","ADIDAS ORIGINAL" } };
-//
-//	  }
-//	HashMap<String,String> map = new HashMap<String,String>();
-//	map.put("email", "anshika@gmail.com");
-//	map.put("password", "Iamking@000");
-//	map.put("product", "ZARA COAT 3");
-//
-//	HashMap<String,String> map1 = new HashMap<String,String>();
-//	map1.put("email", "shetty@gmail.com");
-//	map1.put("password", "Iamking@000");
-//	map1.put("product", "ADIDAS ORIGINAL");
-
-
-
-
-
-
 }
