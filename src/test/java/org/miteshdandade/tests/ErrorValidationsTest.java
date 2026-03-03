@@ -44,5 +44,9 @@ public class ErrorValidationsTest extends BaseTest {
         String productName = "FAKE PRODUCT NOT EXIST";
         ProductCatalogue productCatalogue = landingPage.loginApplication("rahulshetty@gmail.com", "Iamking@000");
         productCatalogue.addProductToCart(productName);
+    @Test(groups= {"ErrorHandling"})
+    public void EmptyCredentialsValidation() throws IOException, InterruptedException {
+        landingPage.loginApplication("", "");
+        Assert.assertEquals("*Email is required", landingPage.getErrorMessage());
     }
 }
