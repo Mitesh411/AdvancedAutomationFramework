@@ -3,6 +3,8 @@ package org.miteshdandade.TestComponents;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.miteshdandade.resources.ExtentReporterNG;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -13,6 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 public class Listeners extends BaseTest implements ITestListener {
+    private static final Logger logger = LogManager.getLogger(Listeners.class);
     ExtentTest test;
     ExtentReports extent = ExtentReporterNG.getReportObject();
     ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Thread safe
@@ -37,7 +40,7 @@ public class Listeners extends BaseTest implements ITestListener {
                     .get(result.getInstance());
 
         } catch (Exception e1) {
-            e1.printStackTrace();
+            logger.error("Failed to retrieve driver from test class: ", e1);
         }
 
 
@@ -47,7 +50,7 @@ public class Listeners extends BaseTest implements ITestListener {
 
             filePath = getScreenshot(result.getMethod().getMethodName(),driver);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Failed to capture screenshot: ", e);
         }
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
 
