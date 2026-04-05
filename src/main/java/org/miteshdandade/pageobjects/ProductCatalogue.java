@@ -47,12 +47,11 @@ public class ProductCatalogue extends AbstractComponent {
 
     public void addProductToCart(String productName)
     {
-        WebElement prod = getProductByName(productName);
-        prod.findElement(addToCart).click();
+        By productAddToCart = By.xpath("//div[contains(@class,'mb-3') and .//b[text()='" + productName + "']]//button[last()]");
+        waitForElementToAppear(productAddToCart);
+        driver.findElement(productAddToCart).click();
         waitForElementToAppear(toastMessage);
         waitForElementToDisappear(spinner);
-
-
     }
 
 }
